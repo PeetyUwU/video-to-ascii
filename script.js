@@ -12,15 +12,17 @@ const context = canvas.getContext('2d', { willReadFrequently: true });
 			canvas.height = videoHeight;
 			canvas.width = videoWidth;
 
-			context.drawImage(video, 0, 0, videoWidth, videoHeight);
+			context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-			context.getImageData(0, 0, videoWidth, videoHeight);
+			context.getImageData(0, 0, canvas.width, canvas.height);
 
-			// const grayScales = convertToGrayScales(
-			// 	context,
-			// 	videoWidth,
-			// 	videoHeight
-			// );
+			const grayScales = convertToGrayScales(
+				context,
+				canvas.width,
+				canvas.height
+			);
+
+			drawAscii(grayScales, canvas.width);
 		});
 	};
 	video.onpause = (e) => {
@@ -50,7 +52,7 @@ const convertToGrayScales = (context, width, height) => {
 		grayScales.push(grayScale);
 	}
 
-	context.drawImage(imageData, 0, 0, videoWidth, videoHeight);
+	//! context.putImageData(imageData, 0, 0, width, height);
 
 	return grayScales;
 };
@@ -79,5 +81,5 @@ const drawAscii = (grayScales, width) => {
 };
 
 function test() {
-	context.getImageData(0, 0, canvas.width, canvas.height);
+	convertToGrayScales(context, canvas.width, canvas.height);
 }
