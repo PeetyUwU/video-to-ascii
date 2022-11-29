@@ -1,3 +1,5 @@
+// !Important! USE LOCAL SERVER OTHERWISE IT WON'T WORK
+
 const video = document.getElementById('video');
 const canvas = document.getElementById('preview');
 const context = canvas.getContext('2d', { willReadFrequently: true });
