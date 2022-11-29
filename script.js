@@ -11,8 +11,9 @@ const context = canvas.getContext('2d', { willReadFrequently: true });
 		let videoWidth = parseInt(video.style.width);
 		let videoHeight = parseInt(video.style.height);
 		interval = setInterval(() => {
-			canvas.height = videoHeight / 10;
-			canvas.width = videoWidth / 10;
+			//! EDIT DIVISION BY YOUR NEEDS
+			canvas.height = videoHeight / 2;
+			canvas.width = videoWidth / 2;
 
 			context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
@@ -54,7 +55,7 @@ const convertToGrayScales = (context, width, height) => {
 		grayScales.push(grayScale);
 	}
 
-	//! context.putImageData(imageData, 0, 0, width, height);
+	//! DO NOT USE context.putImageData(imageData, 0, 0, width, height);
 
 	return grayScales;
 };
