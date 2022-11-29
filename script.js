@@ -11,7 +11,7 @@ const context = canvas.getContext('2d', { willReadFrequently: true });
 		let videoWidth = parseInt(video.style.width);
 		let videoHeight = parseInt(video.style.height);
 		interval = setInterval(() => {
-			//! EDIT DIVISION BY YOUR NEEDS
+			//! EDIT DIVISION BY YOUR NEEDS (square video: both / same number, rectangle video: divide width by half you divide height with)
 			canvas.height = videoHeight / 2;
 			canvas.width = videoWidth / 2;
 
