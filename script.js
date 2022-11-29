@@ -8,7 +8,6 @@ const context = canvas.getContext('2d', { willReadFrequently: true });
 		let video = document.getElementById('video');
 		let videoWidth = parseInt(video.style.width);
 		let videoHeight = parseInt(video.style.height);
-		video.crossOrigin = 'Anonymous';
 		interval = setInterval(() => {
 			canvas.height = videoHeight;
 			canvas.width = videoWidth;
