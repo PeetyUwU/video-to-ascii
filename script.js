@@ -9,8 +9,8 @@ const context = canvas.getContext('2d', { willReadFrequently: true });
 		let videoWidth = parseInt(video.style.width);
 		let videoHeight = parseInt(video.style.height);
 		interval = setInterval(() => {
-			canvas.height = videoHeight;
-			canvas.width = videoWidth;
+			canvas.height = videoHeight / 10;
+			canvas.width = videoWidth / 10;
 
 			context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
